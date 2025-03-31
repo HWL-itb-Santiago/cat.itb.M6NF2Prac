@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace cat.itb.M6NF2Prac.Connections
 {
-    public class ConnectionCloud
+    public class StoreCloudConnection
     {
         private string Username = "santiagovr";
         private string Password = "Chistrees69@";

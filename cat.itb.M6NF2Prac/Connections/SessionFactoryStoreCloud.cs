@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace cat.itb.M6NF2Prac.Connections
 {
-    public class SessionFactoryStore
+    public class SessionFactoryStoreCloud
     {
-        private static readonly string connectionString = "Server = postgresql-santiagovr.alwaysdata.net; port = 5432; Database = santiagovr_m6nf2prac; Username = santiagovr; Password = Chistrees69@";
+        private static readonly string connectionString = "Server=postgresql-santiagovr.alwaysdata.net; port=5432; Database=santiagovr_m6nf2prac; Username=santiagovr; Password=Chistrees69@";
         public static ISessionFactory CreateSessionFactory()
         {
-            var conn = new ConnectionCloud();
+            var conn = new StoreCloudConnection();
             return Fluently.Configure()
                 .Database(PostgreSQLConfiguration.PostgreSQL82.ConnectionString(connectionString))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Program>())

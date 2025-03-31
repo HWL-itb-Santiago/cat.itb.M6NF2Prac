@@ -18,10 +18,11 @@ namespace cat.itb.M6NF2Prac.Maps
             Map(x => x.Job).Column("job");
             Map(x => x.StartDate).Column("startdate");
             Map(x => x.Salary).Column("salary");
-            Map(x => x.Commission).Column("commission");
+            Map(x => x.Commission).Column("commission").Nullable();
             Map(x => x.Dep).Column("dep");
             HasMany(x => x.Products)
                 .KeyColumn("id")
+                .Not.LazyLoad()
                 .Inverse()
                 .Cascade.AllDeleteOrphan();
         }

@@ -23,7 +23,7 @@ namespace cat.itb.M6NF2Prac.CRUD
                 var streamReader = new StreamReader(sqlPath);
                 var command = streamReader.ReadToEnd();
 
-                var db = new ConnectionCloud();
+                var db = new StoreCloudConnection();
                 using (var conn = db.GetConnection())
                 {
                     using (var cmd = new NpgsqlCommand(command, conn))
@@ -43,7 +43,7 @@ namespace cat.itb.M6NF2Prac.CRUD
         {
             try
             {
-                var db = new ConnectionCloud();
+                var db = new StoreCloudConnection();
                 using (var conn = db.GetConnection())
                 {
                     foreach (var table in tableNames)

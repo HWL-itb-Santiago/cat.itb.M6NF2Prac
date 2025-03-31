@@ -19,6 +19,7 @@ namespace cat.itb.M6NF2Prac.Maps
             Map(x => x.Credit).Column("credit");
             HasMany(x => x.OrderProds)
                 .KeyColumn("id")
+                .Not.LazyLoad()
                 .Inverse()
                 .Cascade.AllDeleteOrphan();
         }
